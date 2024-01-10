@@ -1,3 +1,6 @@
 [submodule "token-sale/lib/forge-std"]
 	path = token-sale/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "token-sale/lib/openzeppelin-contracts"]
+	path = token-sale/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
