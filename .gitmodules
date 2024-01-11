@@ -13,3 +13,6 @@
 [submodule "multi-sig-wallet/lib/forge-std"]
 	path = multi-sig-wallet/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "multi-sig-wallet/lib/openzeppelin-contracts"]
+	path = multi-sig-wallet/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
