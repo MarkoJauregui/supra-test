@@ -1,66 +1,52 @@
-## Foundry
+# Decentralized Voting System
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
 
-Foundry consists of:
+The Decentralized Voting System is a blockchain-based voting system implemented as a smart contract on the Ethereum network. It provides a transparent, secure, and accessible platform for conducting elections or polls.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### Features
 
-## Documentation
+- User registration for voting
+- Adding candidates by the contract owner
+- Voting for candidates by registered users
+- Transparent and publicly accessible vote tally
 
-https://book.getfoundry.sh/
+## Installation
+
+### Prerequisites
+
+- Node.js
+- Foundry for smart contract compilation and testing
+
+### Setup
+
+Clone the repository and install dependencies:
+
+```
+git clone https://github.com/your-github/DecentralizedVoting.git
+cd DecentralizedVoting
+forge install
+```
 
 ## Usage
 
-### Build
+### Interacting with the Contract
 
-```shell
-$ forge build
-```
+You can interact with the contract using Foundry or Ethers.js.
 
-### Test
+### Running Tests
 
-```shell
-$ forge test
-```
+Execute the test suite using:
 
-### Format
+- forge test
 
-```shell
-$ forge fmt
-```
+## Contract Functions
 
-### Gas Snapshots
+- registerVoter(): Registers the caller as a voter.
+- addCandidate(string memory \_name): Adds a new candidate (only callable by the contract owner).
+- vote(uint \_candidateId): Casts a vote for a specified candidate (only callable by registered voters).
+- getCandidateVoteCount(uint \_candidateId): Returns the current vote count for a specified candidate.
 
-```shell
-$ forge snapshot
-```
+## Authors
 
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- Marko Jauregui
