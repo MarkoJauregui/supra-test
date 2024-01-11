@@ -1,66 +1,78 @@
-## Foundry
+# TokenSale Smart Contract
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
 
-Foundry consists of:
+The `TokenSale` contract manages token sales on the Ethereum blockchain, integrating features like presale and public sale phases, Ether contributions, token distribution, and refund functionalities.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Key Features
 
-## Documentation
+- Presale and Public Sale Phases
+- Contribution Tracking
+- Refund Functionality
+- Token Distribution
+- Reentrancy Protection using OpenZeppelin's `ReentrancyGuard`
 
-https://book.getfoundry.sh/
+## Dependencies
 
-## Usage
+- Solidity ^0.8.17
+- OpenZeppelin Contracts: `ReentrancyGuard`, `Ownable`, `IERC20`
 
-### Build
+## Functions
 
-```shell
-$ forge build
-```
+- `contribute`
+- `distributeTokens`
+- `endPresale`
+- `startPublicSale`
+- `enableRefund`
+- `claimRefund`
+- `calculateTokenAmount`
+- `_isPresaleActive`
 
-### Test
+## Events
 
-```shell
-$ forge test
-```
+- `ContributionMade`
+- `PublicSaleStarted`
+- `PresaleEnded`
+- `RefundEnabled`
+- `RefundClaimed`
 
-### Format
+## Errors
 
-```shell
-$ forge fmt
-```
+- `InsufficientContribution`
+- `MaxContributionCapReached`
+- `ContributionExceedsCap`
+- `SaleNotActive`
+- `RefundNotAvailable`
+- `InvalidAddress`
+- `InvalidAmount`
+- `PresaleStillActive`
+- `PresaleAlreadyEnded`
 
-### Gas Snapshots
+---
 
-```shell
-$ forge snapshot
-```
+# TokenSale Testing Suite
 
-### Anvil
+## Overview
 
-```shell
-$ anvil
-```
+This suite tests the `TokenSale` contract's functionality, including contributions, sale phases, token distribution, and refunds.
 
-### Deploy
+## Key Tests
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+- `testSuccessfulContribution`
+- `testFailContributionBelowMinimum`
+- `testFailContributionAboveMaximum`
+- `testPublicSaleTransition`
+- `testRefundFunctionality`
+- `testContributionEventEmission`
+- `testApproachingPresaleCap`
+- `testFailExceedPresaleCap`
+- `testFailContributeDuringInactiveSale`
+- `testFailDistributeTokensInvalidAddress`
+- `testFailDistributeTokensInvalidAmount`
+- `testExactMinimumContribution`
+- `testExactMaximumContribution`
 
-### Cast
+## Prerequisites
 
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- Foundry framework
+- Solidity ^0.8.17
