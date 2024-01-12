@@ -4,6 +4,7 @@ pragma solidity ^0.8.17;
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
 /// @title Multi-Signature Wallet
+/// @author Marko Jauregui
 /// @notice Implements a multi-signature wallet where transactions require multiple confirmations.
 /// @dev Inherits from OpenZeppelin's AccessControl for role management.
 contract MultiSigWallet is AccessControl {
