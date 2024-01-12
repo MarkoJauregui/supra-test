@@ -16,3 +16,6 @@
 [submodule "multi-sig-wallet/lib/openzeppelin-contracts"]
 	path = multi-sig-wallet/lib/openzeppelin-contracts
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "token-swap/lib/forge-std"]
+	path = token-swap/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
