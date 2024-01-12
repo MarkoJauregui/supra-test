@@ -1,66 +1,58 @@
-## Foundry
+# MultiSigWallet Project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
 
-Foundry consists of:
+The MultiSigWallet is a blockchain-based smart contract implemented on the Ethereum network. It is designed to enhance security and control for Ethereum transactions by requiring multiple confirmations from designated owners.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### Features
 
-## Documentation
+- Multi-signature functionality: Transactions require multiple confirmations from different owners.
+- Role-based access control: Utilizes OpenZeppelin's AccessControl for managing owner roles.
+- Ethereum transaction support: Send Ether and execute arbitrary transactions.
 
-https://book.getfoundry.sh/
+## Installation
+
+### Prerequisites
+
+- Foundry for smart contract compilation and testing
+
+### Setup
+
+Clone the repository and install dependencies:
+
+```
+git clone https://github.com/your-github/MultiSigWallet.git
+cd MultiSigWallet
+forge install
+```
 
 ## Usage
 
-### Build
+### Interacting with the Contract
 
-```shell
-$ forge build
-```
+You can interact with the contract using Foundry or Ethers.js.
 
-### Test
+### Running Tests
 
-```shell
-$ forge test
-```
+Execute the test suite using:
 
-### Format
+- forge test
 
-```shell
-$ forge fmt
-```
+## Contract Functions
 
-### Gas Snapshots
+- `submitTransaction`: Submit a transaction for confirmation by the owners.
+- `confirmTransaction`: Confirm a submitted transaction.
+- `revokeConfirmation`: Revoke a previously made confirmation.
+- `executeTransaction`: Execute a confirmed transaction.
+- `getOwners`: Retrieve the list of owners.
+- `getTransactionCount`: Get the total number of transactions.
+- `getTransaction`: Get details of a specific transaction.
+- `isConfirmed`: Check if a transaction is confirmed by a specific owner.
 
-```shell
-$ forge snapshot
-```
+## Security
 
-### Anvil
+The contract uses OpenZeppelin's contracts for standard, secure implementations of common functionalities like AccessControl. It's recommended to conduct a thorough audit before using it in a production environment.
 
-```shell
-$ anvil
-```
+## Authors
 
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- Marko Jauregui
