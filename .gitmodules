@@ -19,3 +19,6 @@
 [submodule "token-swap/lib/forge-std"]
 	path = token-swap/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "token-swap/lib/openzeppelin-contracts"]
+	path = token-swap/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
