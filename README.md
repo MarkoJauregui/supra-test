@@ -1,6 +1,6 @@
 # Supra Test Repository
 
-This repository contains four distinct projects, each showcasing different aspects of smart contract development and testing in Solidity. Below is an overview of each project, ordered as per your preference:
+This repository contains four distinct projects. Below is an overview of each project, ordered as per your preference:
 
 ## Projects Overview
 
